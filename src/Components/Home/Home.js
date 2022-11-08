@@ -15,7 +15,7 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('http://localhost:5000/characters')
             .then(res => res.json())
             .then(data => {
                 console.log(data);

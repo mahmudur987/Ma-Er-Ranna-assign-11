@@ -3,6 +3,7 @@ import AllDishes from "../Components/AllDishes/AllDishes";
 import DishDetail from "../Components/DishDetail/DishDetail";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
+import MyReviews from "../Components/MyReviews/MyReviews";
 import SignUp from "../Components/Signup/Signup";
 import Main from "../Layouts/Main";
 
@@ -36,6 +37,12 @@ const routes = createBrowserRouter([
                     return fetch(`http://localhost:5000/dishes/${params.id}`)
                 }
             },
+            {
+                path: '/myreview',
+                element: <MyReviews></MyReviews>
+
+            },
+
         ]
     }
 ])
