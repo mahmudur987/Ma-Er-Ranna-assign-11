@@ -1,4 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
+import AllDishes from "../Components/AllDishes/AllDishes";
+import DishDetail from "../Components/DishDetail/DishDetail";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
 import SignUp from "../Components/Signup/Signup";
@@ -12,7 +14,8 @@ const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('http://localhost:5000/dishes')
             },
             {
                 path: '/login',
@@ -21,6 +24,17 @@ const routes = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/alldishes',
+                element: <AllDishes></AllDishes>
+            },
+            {
+                path: '/dish/:id',
+                element: <DishDetail></DishDetail>,
+                loader: async ({ params }) => {
+                    return fetch(`http://localhost:5000/dishes/${params.id}`)
+                }
             },
         ]
     }

@@ -2,9 +2,7 @@ import React from 'react';
 import './Carousel.css'
 const Corousel = () => {
     return (
-        <div className="carousel w-full">
-
-
+        <div className="carousel w-full h-96 bg-yellow-300">
             <div id="slide1" className=" carousel-item relative h-96 w-full ">
                 <img alt='' src="https://images.unsplash.com/photo-1621417809801-2fba61eaa511?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" className="w-full h-96" />
 

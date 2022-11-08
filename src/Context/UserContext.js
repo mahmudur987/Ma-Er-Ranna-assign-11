@@ -62,7 +62,7 @@ const UserContext = ({ children }) => {
 
             SetUser(currentUser);
             Setloading(false)
-            console.log('currentuser', currentUser)
+            // console.log('currentuser', currentUser)
         });
         return () => {
             unsubscribe();
