@@ -29,7 +29,7 @@ const Headers = () => {
                 <li><Link className='text-xl font-bold text-blue-700' to={'/login'}>Log In</Link></li>
 
             </>}
-        <li><Link> <p> {user.displayName}  </p> </Link></li>
+        <li><Link> <p> {user?.displayName}  </p> </Link></li>
 
 
     </>

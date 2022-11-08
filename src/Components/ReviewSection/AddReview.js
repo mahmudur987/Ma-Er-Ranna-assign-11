@@ -14,7 +14,7 @@ const AddReview = ({ handleAddreview, dish }) => {
         <div>
             <form onSubmit={handleAddreview} >
                 <label className='flex' >
-                    <img className='w-10 rounded' src={user.photoURL} alt="" />
+                    <img className='w-10 rounded' src={user?.photoURL} alt="" />
                     <input name='name' defaultValue={user?.displayName} type="text" />
                 </label>
                 <div className="form-control w-full max-w-xs">

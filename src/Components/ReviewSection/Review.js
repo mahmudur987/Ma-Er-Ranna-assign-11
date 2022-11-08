@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Review = ({ review }) => {
-    console.log(review)
+    // console.log(review)
     const { name, img, foodname, comment } = review
     return (
         <div className='m-2 p-2  border border-pink-600 rounded'>
