@@ -17,14 +17,13 @@ const Headers = () => {
         <li><Link className='text-xl font-bold text-blue-700' to={'/'}>Home</Link></li>
         <li><Link>Item 1</Link></li>
         <li><Link>Item 1</Link></li>
-        <li><Link>Item 1</Link></li>
 
 
         {user ?
             <>
-                <li><Link to={'/myreview'} className='text-xl font-bold text-blue-700' >My Reviews</Link></li>
-                <li><Link to={'/addservices'} className='text-xl font-bold text-blue-700' >Add Service</Link></li>
-                <li><button onClick={handleLogOut} className='text-xl font-bold text-blue-700' >SignOut</button></li>
+                <li><Link to={'/myreview'} className='text-lg font-bold text-blue-700' >My Reviews</Link></li>
+                <li><Link to={'/addservices'} className='text-lg font-bold text-blue-700' >Add Service</Link></li>
+                <li><button onClick={handleLogOut} className='text-lg font-bold text-blue-700' >SignOut</button></li>
 
 
             </>

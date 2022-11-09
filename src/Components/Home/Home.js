@@ -3,7 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import Carousel from '../Carousel/Corousel';
 import Features from '../Fatures/Features';
 import HomeDishes from '../HomeDishes/HomeDishes';
-import Service from '../Service/Service';
+import Character from '../character/Character';
 const Home = () => {
     const dishes = useLoaderData();
     const [features, SetFeatuures] = useState([]);
@@ -18,11 +18,11 @@ const Home = () => {
         fetch('http://localhost:5000/characters')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 SetServices(data)
             })
     }, [])
-    console.log(services)
+    // console.log(services)
     return (
         <div>
             <div className='mb-10'>
@@ -54,7 +54,7 @@ const Home = () => {
                 <h1 className='text-xl md:text-4xl text-amber-100 text-center font-bold m-5 p-3 bg-blue-900'>WHY WITH US </h1>
                 <div className='grid grid-cols-1  md:grid-cols-3 gap-3'>
                     {
-                        services.map(service => <Service service={service}></Service>)
+                        services.map(service => <Character service={service}></Character>)
                     }
                 </div>
 

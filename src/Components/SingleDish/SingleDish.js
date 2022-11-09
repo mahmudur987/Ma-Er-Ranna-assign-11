@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 
 
@@ -18,7 +20,14 @@ const SingleDish = ({ dish }) => {
     return (
         <div className="card lg:card-side bg-base-100 shadow-xl lg:p-4">
             <figure className='lg:w-2/5'>
-                <img className='h-72 w-full hover:min-h-screen ' src={picture} alt="Album" />
+
+                <PhotoProvider>
+                    <PhotoView src={picture}>
+                        <img className='h-full w-full ' src={picture} alt="Album" />
+
+                    </PhotoView>
+                </PhotoProvider>
+
             </figure>
             <div className="card-body lg:w-3/5 ">
                 <h2 className="card-title lg:text-2xl"> {name}</h2>

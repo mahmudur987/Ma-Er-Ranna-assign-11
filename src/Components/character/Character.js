@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Service = ({ service }) => {
+const Character = ({ service }) => {
     // console.log(service)
     const { name, picture, about } = service;
     return (
@@ -17,4 +17,4 @@ const Service = ({ service }) => {
     );
 };
 
-export default Service;
+export default Character;
