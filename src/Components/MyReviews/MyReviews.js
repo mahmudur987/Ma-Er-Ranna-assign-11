@@ -8,7 +8,7 @@ const MyReviews = () => {
 
 
     useEffect(() => {
-        let url = `http://localhost:5000/myreviews?email=${user.email}`;
+        let url = `http://localhost:5000/myreviews?email=${user?.email}`;
         fetch(url).then(res => res.json()).then(data => SetmyReviews(data))
     }, [user])
     // useEffect(() => {

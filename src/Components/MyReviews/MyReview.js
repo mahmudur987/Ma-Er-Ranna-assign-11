@@ -2,7 +2,7 @@ import userEvent from '@testing-library/user-event';
 import React, { useState } from 'react';
 
 const MyReview = ({ myreview }) => {
-    const { name, comment, foodname, _id } = myreview;
+    const { name, comment, foodname, _id, dateAdded } = myreview;
     const [update, Setupdate] = useState(false)
     const [newComment, SetNewComment] = useState(comment)
 
@@ -40,7 +40,7 @@ const MyReview = ({ myreview }) => {
 
 
 
-    // console.log(myreview);
+    console.log(myreview);
 
     return (
         <div className="card w-full bg-base-100 shadow-xl my-10">
@@ -49,7 +49,7 @@ const MyReview = ({ myreview }) => {
                     {name}
 
                 </h2>
-                <p> Reviewing Comments for {foodname}  </p>
+                <p> Reviewing Comments for {foodname}  <span><small>{dateAdded}</small></span> </p>
                 <p className='font-bold p-4 border'> {newComment}  </p>
                 <div className="card-actions justify-between">
                     <button className="badge badge-outline">Delete Review</button>

@@ -57,7 +57,7 @@ const ReviewSection = ({ dish }) => {
     }, [dish])
 
 
-    console.log(dish, reviews)
+    // console.log(dish, reviews)
 
 
     return (
