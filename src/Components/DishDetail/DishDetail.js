@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ReviewSection from '../ReviewSection/ReviewSection';
+import { Helmet } from "react-helmet";
 
 const DishDetail = () => {
     const dish = useLoaderData();
@@ -8,6 +9,9 @@ const DishDetail = () => {
     const { name, about, price, rating, picture, _id } = dish;
     return (
         <div className='grid grid-cols-1 md:grid-cols-5 gap-4'>
+            <Helmet>
+                <title>{name}</title>
+            </Helmet>
             <div className='md:col-span-3 '>
                 <div className="card  bg-base-100 shadow-xl">
                     <figure><img src={picture} alt="Shoes" /></figure>

@@ -4,6 +4,8 @@ import Carousel from '../Carousel/Corousel';
 import Features from '../Fatures/Features';
 import HomeDishes from '../HomeDishes/HomeDishes';
 import Character from '../character/Character';
+import { Helmet } from "react-helmet";
+
 const Home = () => {
     const dishes = useLoaderData();
     const [features, SetFeatuures] = useState([]);
@@ -25,6 +27,10 @@ const Home = () => {
     // console.log(services)
     return (
         <div>
+            <Helmet>
+                <title>Ma-er-ranna</title>
+            </Helmet>
+
             <div className='mb-10'>
                 <Carousel></Carousel>
 

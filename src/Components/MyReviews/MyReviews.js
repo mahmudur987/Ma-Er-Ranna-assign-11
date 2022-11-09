@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { authContext } from '../../Context/UserContext';
 import MyReview from './MyReview';
+import { Helmet } from "react-helmet";
 
 const MyReviews = () => {
     const { user, Setloading, loading } = useContext(authContext);
@@ -34,6 +35,9 @@ const MyReviews = () => {
 
     return (
         <div >
+            <Helmet>
+                <title>My Reviews</title>
+            </Helmet>
             <div className='w-3/4 mx-auto'>
                 {
                     myreviews?.map((myreview, idx) => <MyReview

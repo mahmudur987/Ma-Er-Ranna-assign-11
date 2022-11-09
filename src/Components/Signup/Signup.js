@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { authContext } from '../../Context/UserContext';
+import { Helmet } from "react-helmet";
 
 
 const SignUp = () => {
@@ -70,6 +71,9 @@ const SignUp = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200">
+            <Helmet>
+                <title>Sign Up</title>
+            </Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Sign Up!</h1>

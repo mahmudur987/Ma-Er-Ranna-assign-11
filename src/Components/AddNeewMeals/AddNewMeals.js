@@ -1,5 +1,6 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import { Helmet } from "react-helmet";
 
 const AddNewMeals = () => {
 
@@ -44,7 +45,9 @@ const AddNewMeals = () => {
     return (
 
         <div className="hero-content">
-
+            <Helmet>
+                <title>Add New</title>
+            </Helmet>
             <div className="card flex-shrink-0 w-full md:w-1/2 shadow-2xl bg-base-100">
                 <form onSubmit={handleSubmit} className="card-body ">
 

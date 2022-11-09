@@ -6,6 +6,12 @@ import { GoogleAuthProvider, GithubAuthProvider } from "firebase/auth"
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { authContext } from '../../Context/UserContext';
+import { Helmet } from "react-helmet";
+
+
+
+
+
 const Login = () => {
     const { login, googleLogIn, githubLogIn, passwordReset } = useContext(authContext)
     const [error, SetError] = useState('');
@@ -113,6 +119,9 @@ const Login = () => {
 
     return (
         <div className="hero min-h-screen bg-pink-200">
+            <Helmet>
+                <title>Log In</title>
+            </Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Login!</h1>

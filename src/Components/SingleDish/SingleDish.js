@@ -29,14 +29,17 @@ const SingleDish = ({ dish }) => {
                 </PhotoProvider>
 
             </figure>
-            <div className="p-5 lg:w-3/5 lg:h-72 ">
+            <div className="p-5 lg:w-3/5 lg:h-80 ">
                 <h2 className="card-title lg:text-2xl"> {name}</h2>
-                <p className='lg:text-lg  '> {about.slice(1, 100)}....</p>
+                <p className='font-bold  '> {about.slice(1, 100)}....</p>
                 <p className='font-bold mt-3'>Price : {price}</p>
 
-                <div className=" justify-end text-lg m-5">
-                    <p> Rating : {rating}  <FaStar className='text-red-600 inline'></FaStar></p>
-                    <p className='text-xs'>Release Date: {date}</p>
+                <div className=" flex justify-between text-lg m-5">
+                    <p>
+                        <p> Rating : {rating}  <FaStar className='text-red-600 inline'></FaStar></p>
+                        <p className='text-xs'>Release Date: {date}</p>
+                    </p>
+
                     <p className='text-end mb-5'>
                         <Link to={`/dish/${_id}`}>
                             <button className="p-1 px-2 rounded-lg font-bold btn-info">Detail</button>

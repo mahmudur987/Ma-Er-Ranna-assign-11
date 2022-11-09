@@ -10,6 +10,7 @@ import MyReviews from "../Components/MyReviews/MyReviews";
 import SignUp from "../Components/Signup/Signup";
 import Main from "../Layouts/Main";
 import PrivatRoutes from "./PrivetRoutes";
+import { Helmet } from "react-helmet";
 
 
 const routes = createBrowserRouter([
@@ -58,7 +59,12 @@ const routes = createBrowserRouter([
             },
             {
                 path: '*',
-                element: <div className="text-3xl md:text-5xl text-center my-40"> this page is under maintanence <FaSadCry></FaSadCry> <FaSadCry className="text-end text-yellow-600 "></FaSadCry>   </div>
+                element: <div className="text-3xl md:text-5xl text-center my-40"> this page is under maintanence <FaSadCry></FaSadCry> <FaSadCry className="text-end text-yellow-600 "></FaSadCry>
+                    <Helmet>
+                        <title>404</title>
+                    </Helmet>
+
+                </div>
 
             },
 
