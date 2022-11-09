@@ -11,23 +11,20 @@ const MyReviews = () => {
         let url = `http://localhost:5000/myreviews?email=${user?.email}`;
         fetch(url).then(res => res.json()).then(data => SetmyReviews(data))
     }, [user])
-    // useEffect(() => {
-
-    // },[])
-    // useEffect(()=>{
-
-    // },[])
-    // useEffect(()=>{
-
-    // },[])
-
-    // console.log(myreviews)
+    const afterdeletereview = (id) => {
+        const remainingreview = myreviews.filter(rev => rev._id !== id);
+        SetmyReviews(remainingreview);
+    }
 
 
     return (
         <div className='w-3/4 mx-auto'>
             {
-                myreviews?.map((myreview, idx) => <MyReview key={idx} myreview={myreview} ></MyReview>)
+                myreviews?.map((myreview, idx) => <MyReview
+                    key={idx}
+                    myreview={myreview}
+                    afterdeletereview={afterdeletereview}
+                ></MyReview>)
             }
         </div>
     );

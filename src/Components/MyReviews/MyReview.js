@@ -1,8 +1,9 @@
 import userEvent from '@testing-library/user-event';
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
-const MyReview = ({ myreview }) => {
-    const { name, comment, foodname, _id, dateAdded } = myreview;
+const MyReview = ({ myreview, afterdeletereview }) => {
+    const { name, comment, foodname, _id, date } = myreview;
     const [update, Setupdate] = useState(false)
     const [newComment, SetNewComment] = useState(comment)
 
@@ -22,6 +23,7 @@ const MyReview = ({ myreview }) => {
         })
             .then((response) => response.json())
             .then((data) => {
+                toast.success('your updated review successfully')
                 console.log('Success:', data);
             })
             .catch((error) => {
@@ -35,7 +37,26 @@ const MyReview = ({ myreview }) => {
 
 
 
+    const handledelete = () => {
+        const proceed = window.confirm('are sure for remove this review');
+        if (proceed) {
+            fetch(`http://localhost:5000/reviews/${_id}`, {
+                method: 'DELETE', // or 'PUT'
 
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log('Success:', data);
+                    toast.success('your review remove successfully')
+                    afterdeletereview(_id)
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+
+    }
 
 
 
@@ -49,10 +70,10 @@ const MyReview = ({ myreview }) => {
                     {name}
 
                 </h2>
-                <p> Reviewing Comments for {foodname}  <span><small>{dateAdded}</small></span> </p>
+                <p> Reviewing Comments for {foodname}  <span><small>{date}</small></span> </p>
                 <p className='font-bold p-4 border'> {newComment}  </p>
                 <div className="card-actions justify-between">
-                    <button className="badge badge-outline">Delete Review</button>
+                    <button onClick={handledelete} className="badge badge-outline">Delete Review</button>
                     <button onClick={() => Setupdate(!update)} className="badge badge-outline">Update Review</button>
                 </div>
                 <form onSubmit={handleupdate} className={`my-2 mt-4 ${update ? 'block' : 'hidden'}`}>
