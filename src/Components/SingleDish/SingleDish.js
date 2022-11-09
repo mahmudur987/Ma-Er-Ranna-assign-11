@@ -16,30 +16,33 @@ const SingleDish = ({ dish }) => {
 
 
     // console.log(dish)
-    const { name, about, price, rating, picture, _id } = dish
+    const { name, about, price, rating, picture, _id, date } = dish
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl lg:p-4">
+        <div className="card p-2 lg:card-side bg-base-100 shadow-xl lg:p-4">
             <figure className='lg:w-2/5'>
 
                 <PhotoProvider>
                     <PhotoView src={picture}>
-                        <img className='h-full w-full ' src={picture} alt="Album" />
+                        <img className='h-72 w-full ' src={picture} alt="Album" />
 
                     </PhotoView>
                 </PhotoProvider>
 
             </figure>
-            <div className="card-body lg:w-3/5 ">
+            <div className="p-5 lg:w-3/5 lg:h-72 ">
                 <h2 className="card-title lg:text-2xl"> {name}</h2>
-                <p className='lg:text-xl '> {about.slice(1, 100)}....</p>
-                <p className='text-xl'>price : {price}</p>
+                <p className='lg:text-lg  '> {about.slice(1, 100)}....</p>
+                <p className='font-bold mt-3'>Price : {price}</p>
 
-                <div className="card-actions justify-end text-2xl">
-                    <p> Rating : {rating}  <FaStar className='text-xl text-red-600 inline'></FaStar></p>
-                    <Link to={`/dish/${_id}`}>
-                        <button className="btn btn-primary">Detail</button>
+                <div className=" justify-end text-lg m-5">
+                    <p> Rating : {rating}  <FaStar className='text-red-600 inline'></FaStar></p>
+                    <p className='text-xs'>Release Date: {date}</p>
+                    <p className='text-end mb-5'>
+                        <Link to={`/dish/${_id}`}>
+                            <button className="p-1 px-2 rounded-lg font-bold btn-info">Detail</button>
 
-                    </Link>
+                        </Link>
+                    </p>
                 </div>
             </div>
 

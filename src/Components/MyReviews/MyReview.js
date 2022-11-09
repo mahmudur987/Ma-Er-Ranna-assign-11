@@ -1,6 +1,6 @@
-import userEvent from '@testing-library/user-event';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const MyReview = ({ myreview, afterdeletereview }) => {
     const { name, comment, foodname, _id, date } = myreview;
@@ -14,7 +14,7 @@ const MyReview = ({ myreview, afterdeletereview }) => {
         const newcomment = { comment }
         SetNewComment(comment)
 
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://ma-er-ranna-server.vercel.app/reviews/${_id}`, {
             method: 'PUT', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const MyReview = ({ myreview, afterdeletereview }) => {
     const handledelete = () => {
         const proceed = window.confirm('are sure for remove this review');
         if (proceed) {
-            fetch(`http://localhost:5000/reviews/${_id}`, {
+            fetch(`https://ma-er-ranna-server.vercel.app/reviews/${_id}`, {
                 method: 'DELETE', // or 'PUT'
 
             })
@@ -61,7 +61,7 @@ const MyReview = ({ myreview, afterdeletereview }) => {
 
 
 
-    console.log(myreview);
+    // console.log(myreview);
 
     return (
         <div className="card w-full bg-base-100 shadow-xl my-10">
@@ -84,7 +84,8 @@ const MyReview = ({ myreview, afterdeletereview }) => {
                     </p>
                 </form>
             </div>
-        </div>
+
+        </div >
     );
 };
 

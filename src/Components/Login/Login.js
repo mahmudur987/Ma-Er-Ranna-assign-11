@@ -20,8 +20,21 @@ const Login = () => {
         const password = form.password.value;
         login(email, password).then((result) => {
             const user = result.user;
-            console.log(user);
-            navigate(from, { replace: true });
+            const currentUser = { email: user.email };
+            console.log(currentUser);
+            fetch(`https://ma-er-ranna-server.vercel.app/jwt`, {
+                method: 'POST',
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(currentUser)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    localStorage.setItem('RannaToken', data.token);
+                    navigate(from, { replace: true })
+                })
 
         })
             .catch((error) => {
@@ -35,10 +48,21 @@ const Login = () => {
         const googleprovider = new GoogleAuthProvider()
         googleLogIn(googleprovider).then(result => {
             const user = result.user;
-            navigate(from, { replace: true });
-            navigate(from, { replace: true });
-
-            console.log(user)
+            const currentUser = { email: user.email };
+            console.log(currentUser);
+            fetch(`http://localhost:5000/jwt`, {
+                method: 'POST',
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(currentUser)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    localStorage.setItem('RannaToken', data.token);
+                    navigate(from, { replace: true })
+                })
         }).catch(error => {
             const errormasage = error.message;
             SetError(errormasage)
@@ -48,9 +72,21 @@ const Login = () => {
         const gitprovider = new GithubAuthProvider()
         githubLogIn(gitprovider).then(result => {
             const user = result.user;
-            navigate(from, { replace: true });
-
-            console.log(user)
+            const currentUser = { email: user.email };
+            console.log(currentUser);
+            fetch(`http://localhost:5000/jwt`, {
+                method: 'POST',
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(currentUser)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    localStorage.setItem('RannaToken', data.token);
+                    navigate(from, { replace: true })
+                })
         }).catch(error => {
             const errormasage = error.message;
             SetError(errormasage)
@@ -76,7 +112,7 @@ const Login = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-pink-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Login!</h1>

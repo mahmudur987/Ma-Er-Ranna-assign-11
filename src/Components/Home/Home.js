@@ -9,13 +9,13 @@ const Home = () => {
     const [features, SetFeatuures] = useState([]);
     const [services, SetServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/features')
+        fetch('https://ma-er-ranna-server.vercel.app/features')
             .then(res => res.json())
             .then(data => SetFeatuures(data))
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:5000/characters')
+        fetch('https://ma-er-ranna-server.vercel.app/characters')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -29,8 +29,13 @@ const Home = () => {
                 <Carousel></Carousel>
 
             </div>
-            <div className='my-16'>
-                <HomeDishes dishes={dishes}  ></HomeDishes>
+            <div className='my-16 border '>
+                <h1 className='text-xl md:text-4xl text-cyan-200 text-center font-bold m-5 p-3 bg-gray-800'>EXCLUSIVE AND NEWLY ADDED</h1>
+                <div className='lg:w-10/12 mx-auto'>
+                    <HomeDishes dishes={dishes}  ></HomeDishes>
+
+                </div>
+
                 <p className='text-center'>
                     <Link to={'/alldishes'}>
                         <button className='btn btn-info text-center'>See All</button>

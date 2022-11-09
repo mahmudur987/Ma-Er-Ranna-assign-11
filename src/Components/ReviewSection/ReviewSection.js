@@ -1,4 +1,4 @@
-import { error } from 'daisyui/src/colors';
+
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +22,7 @@ const ReviewSection = ({ dish }) => {
         const AddNewreview = { name, email, comment, rating, foodname, img }
         const newreview = [...reviews, AddNewreview]
         if (user) {
-            fetch('http://localhost:5000/reviews', {
+            fetch('https://ma-er-ranna-server.vercel.app/reviews', {
                 method: 'POST', // or 'PUT'
                 headers: {
                     'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const ReviewSection = ({ dish }) => {
 
     }
     useEffect(() => {
-        const url = `http://localhost:5000/reviews?foodname=${dish.name}`;
+        const url = `https://ma-er-ranna-server.vercel.app/reviews?foodname=${dish.name}`;
         fetch(url).then(res => res.json()).then(data => {
             SetReviews(data);
             console.log('success', data);
