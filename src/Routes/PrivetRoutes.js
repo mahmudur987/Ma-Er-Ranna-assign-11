@@ -8,7 +8,10 @@ const PrivatRoutes = ({ children }) => {
     const { user, loading } = useContext(authContext);
 
     if (loading) {
-        return <div>  loading </div>
+        return (
+            <div className='flex w-full justify-center h-24 '>
+                <div className="w-16 h-16 text-center border-4 border-dashed rounded-full border-red-900 animate-spin dark:border-red-900"></div>
+            </div>)
     }
 
     if (!user) {

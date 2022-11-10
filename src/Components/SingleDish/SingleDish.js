@@ -35,10 +35,10 @@ const SingleDish = ({ dish }) => {
                 <p className='font-bold mt-3'>Price : {price}</p>
 
                 <div className=" flex justify-between text-lg m-5">
-                    <p>
+                    <div>
                         <p> Rating : {rating}  <FaStar className='text-red-600 inline'></FaStar></p>
                         <p className='text-xs'>Release Date: {date}</p>
-                    </p>
+                    </div>
 
                     <p className='text-end mb-5'>
                         <Link to={`/dish/${_id}`}>
