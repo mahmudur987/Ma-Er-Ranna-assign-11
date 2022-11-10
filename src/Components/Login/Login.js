@@ -56,7 +56,7 @@ const Login = () => {
             const user = result.user;
             const currentUser = { email: user.email };
             console.log(currentUser);
-            fetch(`http://localhost:5000/jwt`, {
+            fetch(`https://ma-er-ranna-server.vercel.app/jwt`, {
                 method: 'POST',
                 headers: {
                     "content-type": "application/json"
@@ -80,7 +80,7 @@ const Login = () => {
             const user = result.user;
             const currentUser = { email: user.email };
             console.log(currentUser);
-            fetch(`http://localhost:5000/jwt`, {
+            fetch(`https://ma-er-ranna-server.vercel.app/jwt`, {
                 method: 'POST',
                 headers: {
                     "content-type": "application/json"
@@ -90,6 +90,7 @@ const Login = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
+                    toast.error('you should login with google otherwise you cant provide a review')
                     localStorage.setItem('RannaToken', data.token);
                     navigate(from, { replace: true })
                 })
