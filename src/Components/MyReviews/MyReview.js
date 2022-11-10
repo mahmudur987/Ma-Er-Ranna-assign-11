@@ -39,6 +39,9 @@ const MyReview = ({ myreview, afterdeletereview }) => {
 
     const handledelete = () => {
         const proceed = window.confirm('are sure for remove this review');
+
+        console.log(window.confirm)
+
         if (proceed) {
             fetch(`https://ma-er-ranna-server.vercel.app/reviews/${_id}`, {
                 method: 'DELETE', // or 'PUT'

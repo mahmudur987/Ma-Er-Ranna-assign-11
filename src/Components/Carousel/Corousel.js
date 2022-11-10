@@ -1,6 +1,12 @@
 import React from 'react';
 import './Carousel.css'
+import { motion } from 'framer-motion';
+
+
+
+
 const Corousel = () => {
+
     return (
         <div className="carousel w-full h-96 bg-yellow-300">
 
@@ -13,6 +19,19 @@ const Corousel = () => {
                     <a href="#slide2" className="btn btn-circle">❯</a>
                 </div>
                 <div >
+                    <motion.h1
+                        animate={{ scale: [1, 2.5, 1], x: [null, 60, 0], color: 'white', opacity: [0, 1, 0] }}
+                        // exit={{ opacity: 0 }}
+                        transition={{ ease: "easeInOut", duration: 8 }}
+                        className='absolute left-5 top-1 text-b'
+                    >Welcome</motion.h1>
+                    <motion.h1
+                        animate={{ scale: [1, 2.5, 1], x: [null, -40, 0], y: [null, 40, 0], color: 'white', opacity: [0, 1, 0] }}
+                        // exit={{ opacity: 0 }}
+                        transition={{ ease: "easeInOut", duration: 8 }}
+                        className='absolute right-5 top-1 text-b'
+                    >Ma-Er-Ranna</motion.h1>
+
                     <h1 className='text-3xl font-bold absolute   left-1/4   top-5    md:left-1/4 md:top-1/4  md:text-4xl lg:text-7xl font-serif text-red-500'>Delisious Food </h1>
                     <h1 className='text-2xl font-bold absolute   right-1/4  top-1/4  md:left-1/2  md:top-1/3 lg:top-1/2 lg:left-1/3 md:text-3xl text-white '> From </h1>
                     <h1 className='text-3xl font-bold absolute   right-1/4  top-1/3  md:right-1/4 md:top-1/2 md:text-5xl text-green-100 '>SUMYIA </h1>

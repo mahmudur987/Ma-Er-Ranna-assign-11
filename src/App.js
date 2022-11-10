@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet";
 
 function App() {
   return (
-    <div className='w-11/12 mx-auto'>
+    <div className='w-11/12 mx-auto '>
       <Helmet>
         <title>Ma-er-ranna</title>
       </Helmet>

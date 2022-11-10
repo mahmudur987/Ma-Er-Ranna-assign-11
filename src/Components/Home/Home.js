@@ -26,7 +26,7 @@ const Home = () => {
     }, [])
     // console.log(services)
     return (
-        <div>
+        <div className='font-display'>
             <Helmet>
                 <title>Ma-er-ranna</title>
             </Helmet>
