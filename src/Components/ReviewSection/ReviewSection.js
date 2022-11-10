@@ -44,9 +44,9 @@ const ReviewSection = ({ dish }) => {
 
         } else {
             toast.error('please login first');
-            navigate('/signup')
+            navigate('/login')
         }
-
+        form.reset()
     }
     useEffect(() => {
         const url = `https://ma-er-ranna-server.vercel.app/reviews?foodname=${dish.name}`;

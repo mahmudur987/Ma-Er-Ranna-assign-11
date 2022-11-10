@@ -18,7 +18,7 @@ const SingleDish = ({ dish }) => {
     // console.log(dish)
     const { name, about, price, rating, picture, _id, date } = dish
     return (
-        <div className="card p-2 lg:card-side bg-base-100 shadow-xl lg:p-4">
+        <div className=" card p-2 lg:card-side bg-base-100 shadow-xl lg:p-4">
             <figure className='lg:w-2/5'>
 
                 <PhotoProvider>
@@ -34,7 +34,7 @@ const SingleDish = ({ dish }) => {
                 <p className='font-bold  '> {about.slice(1, 100)}....</p>
                 <p className='font-bold mt-3'>Price : {price}</p>
 
-                <div className=" flex justify-between text-lg m-5">
+                <div className=" flex justify-between text-lg m-5 ">
                     <div>
                         <p> Rating : {rating}  <FaStar className='text-red-600 inline'></FaStar></p>
                         <p className='text-xs'>Release Date: {date}</p>
@@ -42,7 +42,7 @@ const SingleDish = ({ dish }) => {
 
                     <p className='text-end mb-5'>
                         <Link to={`/dish/${_id}`}>
-                            <button className="p-1 px-2 rounded-lg font-bold btn-info">Detail</button>
+                            <button className="p-1 px-2 rounded-lg font-bold btn-info absolute bottom-5 right-5   ">Detail</button>
 
                         </Link>
                     </p>

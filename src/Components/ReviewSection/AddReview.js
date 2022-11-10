@@ -21,7 +21,7 @@ const AddReview = ({ handleAddreview, dish }) => {
                     <label className="label">
                         <span className="label-text">Write your comment for <input readOnly name='dish' className='inline-flex font-bold' defaultValue={dish.name} /> </span>
                     </label>
-                    <input name='comment' type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                    <input name='comment' type="text" placeholder="Type here" className="input input-bordered w-auto " />
                     <label className="label">
                         <div>
                             <span className="label-text-alt font-bold text-xl">Rating</span>

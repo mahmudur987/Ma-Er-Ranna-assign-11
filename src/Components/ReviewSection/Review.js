@@ -2,7 +2,7 @@ import React from 'react';
 
 const Review = ({ review }) => {
     console.log(review)
-    const { name, img, foodname, comment, date } = review
+    const { name, img, foodname, comment, date, rating } = review
     return (
         <div className='m-2 p-2  border border-pink-600 rounded'>
             <div className='flex'>
@@ -11,8 +11,9 @@ const Review = ({ review }) => {
             <p><small className='text-xs'>{date}</small></p>
 
             <div>
-                <p>Comments for  <span className='text-xl font-bold'>{foodname}</span> </p>
+                <p className='text-sm'>Comments for  <span className='font-bold'>{foodname}</span> </p>
                 <p className='h-20 border text-sm font-bold overflow-hidden hover:overflow-scroll'> {comment}</p>
+                <p className='text-sm'>Rating : {rating}</p>
             </div>
 
         </div>

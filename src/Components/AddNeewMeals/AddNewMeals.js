@@ -31,6 +31,7 @@ const AddNewMeals = () => {
             .catch((error) => {
                 console.error('Error:', error);
             });
+        form.reset();
         console.log(newDish)
     }
 

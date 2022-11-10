@@ -74,7 +74,7 @@ const MyReview = ({ myreview, afterdeletereview }) => {
 
                 </h2>
                 <p> Reviewing Comments for {foodname}  <span><small>{date}</small></span> </p>
-                <p className='font-bold p-4 border'> {newComment}  </p>
+                <p className='font-bold p-4 border overflow-hidden hover:overflow-scroll '> {newComment}  </p>
                 <div className="card-actions justify-between">
                     <button onClick={handledelete} className="badge badge-outline">Delete Review</button>
                     <button onClick={() => Setupdate(!update)} className="badge badge-outline">Update Review</button>
