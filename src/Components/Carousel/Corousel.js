@@ -11,7 +11,7 @@ const Corousel = () => {
         <div className="carousel w-full h-96 bg-yellow-300">
 
 
-            <div id="slide1" className=" carousel-item relative h-96 w-full ">
+            <div id="slide1" className=" carousel-item relative w-full ">
                 <img alt='' src="https://images.unsplash.com/photo-1621417809801-2fba61eaa511?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" className="w-full h-96" />
 
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -32,7 +32,7 @@ const Corousel = () => {
                         className='absolute right-5 top-1 text-b'
                     >Ma-Er-Ranna</motion.h1>
 
-                    <h1 className='text-3xl font-bold absolute   left-1/4   top-5    md:left-1/4 md:top-1/4  md:text-4xl lg:text-7xl font-serif text-red-500'>Delisious Food </h1>
+                    <h1 className='text-3xl font-bold absolute   left-1/4   top-5    md:left-1/4 md:top-1/4  md:text-4xl lg:text-7xl font-serif text-red-500'>Delicious Food </h1>
                     <h1 className='text-2xl font-bold absolute   right-1/4  top-1/4  md:left-1/2  md:top-1/3 lg:top-1/2 lg:left-1/3 md:text-3xl text-white '> From </h1>
                     <h1 className='text-3xl font-bold absolute   right-1/4  top-1/3  md:right-1/4 md:top-1/2 md:text-5xl text-green-100 '>SUMYIA </h1>
                     <h1 className='text-xl  font-bold absolute   left-5 right-5  text-green-200 bottom-14'>A reliable establishment of delicious and nutritious food </h1>
