@@ -15,7 +15,7 @@ const AddReview = ({ handleAddreview, dish }) => {
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text">
-              Write your comment for{" "}
+              Write your comment for
               <input
                 readOnly
                 name="dish"
@@ -32,8 +32,8 @@ const AddReview = ({ handleAddreview, dish }) => {
           />
           <label className="label">
             <div>
-              <span className="label-text-alt font-bold text-xl">Rating</span>
-              <select name="rating" className="text-xl">
+              <span className="label-text-alt font-bold ">Rating</span>
+              <select name="rating" className="text-sm">
                 <option value="1"> 1* </option>
                 <option value="2">2*</option>
                 <option value="3">3*</option>
