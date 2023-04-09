@@ -52,24 +52,21 @@ const ReviewSection = ({ dish }) => {
       .then((res) => res.json())
       .then((data) => {
         SetReviews(data);
-        // console.log("success", data);
       });
   }, [dish]);
 
-  // console.log(dish, reviews)
-
   return (
     <div>
+      <div className="my-10">
+        {reviews?.map((review, idx) => (
+          <Review key={idx} review={review}></Review>
+        ))}
+      </div>
       <div className="border">
         <p className="text-center text-blue-600 text-2xl font-bold my-5">
           Add New Review
         </p>
         <AddReview handleAddreview={handleAddreview} dish={dish}></AddReview>
-      </div>
-      <div className="my-10">
-        {reviews?.map((review, idx) => (
-          <Review key={idx} review={review}></Review>
-        ))}
       </div>
     </div>
   );
