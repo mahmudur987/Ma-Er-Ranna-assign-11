@@ -16,28 +16,25 @@ const SingleDish = ({ dish }) => {
           </PhotoView>
         </PhotoProvider>
       </figure>
-      <div className="p-5 lg:w-3/5 lg:h-80 ">
+      <div className="pl-4 lg:w-3/5 lg:h-72 flex flex-col justify-around items-start text-start">
         <h2 className="card-title lg:text-2xl"> {name}</h2>
-        <p className="font-bold  "> {about.slice(1, 100)}....</p>
-        <p className="font-bold mt-3">Price : {price}</p>
+        <p className="font-bold uppercase"> {about.slice(1, 150)} . . . </p>
+        <p className="font-bold">Price : {price}</p>
 
-        <div className=" flex justify-between text-lg m-5 ">
+        <div className=" w-full  flex justify-between">
           <div>
-            <p>
-              {" "}
-              Rating : {rating}{" "}
+            <p className="text-lg">
+              Rating : {rating}
               <FaStar className="text-red-600 inline"></FaStar>
             </p>
             <p className="text-xs">Release Date: {date}</p>
           </div>
 
-          <p className="text-end mb-5">
+          <div className="">
             <Link to={`/dish/${_id}`}>
-              <button className="p-1 px-2 rounded-lg font-bold btn-info absolute bottom-5 right-5   ">
-                Detail
-              </button>
+              <button className="btn btn-info ">Detail</button>
             </Link>
-          </p>
+          </div>
         </div>
       </div>
     </div>
