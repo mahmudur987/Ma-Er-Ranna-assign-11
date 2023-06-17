@@ -4,9 +4,8 @@ import { authContext } from "../../Context/UserContext";
 
 const Headers = () => {
   const { user, logout } = useContext(authContext);
-
   const [show, setshow] = useState(true);
-
+  console.log(user);
   const handleLogOut = () => {
     logout()
       .then((result) => {
@@ -53,7 +52,7 @@ const Headers = () => {
           <div className="  flex flex-col">
             <p className="font-bold text-red-900">{user?.displayName}</p>
 
-            <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" />
+            <img className="h-8 w-8 rounded-full" src={user?.photoURL} alt="" />
             <button onClick={handleLogOut} className="font-bold text-red-900">
               SignOut
             </button>

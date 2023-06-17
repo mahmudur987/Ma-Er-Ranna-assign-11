@@ -32,7 +32,7 @@ const SingleDish = ({ dish }) => {
 
           <div className="">
             <Link to={`/dish/${_id}`}>
-              <button className="btn btn-info ">Detail</button>
+              <button className="btn btn-info ">Details</button>
             </Link>
           </div>
         </div>

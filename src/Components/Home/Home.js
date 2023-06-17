@@ -5,6 +5,11 @@ import Features from "../Fatures/Features";
 import HomeDishes from "../HomeDishes/HomeDishes";
 import Character from "../character/Character";
 import { Helmet } from "react-helmet";
+import HealthySnacks from "../HealthySnacks/HealthySnacks";
+import SpecialPackages from "../SpecialPackages/SpecialPackages";
+import Juice from "../Juice/Juice";
+import Services from "../Services/Services";
+import PublicReviews from "../PublicReview/PublicReview";
 
 const Home = () => {
   const dishes = useLoaderData();
@@ -52,6 +57,14 @@ const Home = () => {
         </p>
       </div>
 
+      <div className="my-16  border">
+        <HealthySnacks />
+      </div>
+
+      <div className="my-16  border">
+        <SpecialPackages />
+      </div>
+
       <div className=" my-16  border ">
         <h1 className="text-xl md:text-4xl text-white text-center font-bold m-5 p-3 bg-black rounded-lg">
           {" "}
@@ -66,6 +79,27 @@ const Home = () => {
       </div>
 
       <div className="my-16  border">
+        <Juice />
+      </div>
+
+      <div className="my-16  border">
+        <div className="bg-violet-900 text-white min-h-[180px] p-5 flex flex-col items-center justify-center">
+          <div className="w-3/4 text-start">
+            <h1 className="text-3xl md:text-5xl ">
+              Exciting New Healthy Snacks Every Time
+            </h1>
+            <p className="text-xl">
+              {" "}
+              Each box will contain a variety of different healthy snacks, we
+              rotate the contents with favourites and some extra special brands.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="my-16  border">
+        <Services />
+      </div>
+      <div className="my-16  border">
         <h1 className="text-xl md:text-4xl text-white text-center font-bold m-5 p-3 bg-black rounded-lg">
           WHY WITH US{" "}
         </h1>
@@ -74,6 +108,9 @@ const Home = () => {
             <Character service={service}></Character>
           ))}
         </div>
+      </div>
+      <div className="my-16  border">
+        <PublicReviews />
       </div>
     </div>
   );

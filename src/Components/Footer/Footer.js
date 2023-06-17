@@ -6,9 +6,15 @@ const Footer = () => {
   return (
     <footer className="footer footer-center p-10 shadow-xl my-10 border">
       <div>
-        <FaDribbble className="text-4xl"></FaDribbble>
+        <p>
+          <img
+            className="w-14 rounded-full"
+            src="https://images.unsplash.com/photo-1528712306091-ed0763094c98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=740&q=80"
+            alt=""
+          />
+        </p>
         <p className="font-bold">
-          Stream Collections Ltd. <br />
+          Ma-Er-Ranna <br />
           Providing reliable Food since 2011
         </p>
         <p>Copyright © 2022 - All right reserved</p>
