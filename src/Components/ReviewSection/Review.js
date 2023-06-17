@@ -4,26 +4,33 @@ const Review = ({ review }) => {
   //   console.log(review);
   const { name, img, foodname, comment, date, rating } = review;
   return (
-    <div className="my-5 p-2  border rounded">
-      <div className="flex flex-col">
-        <img className="w-10 rounded-full" src={img} alt="" />{" "}
-        <p className="font-bold uppercase">{name}</p>
+    <div className="my-5 p-2  border border-black rounded">
+      <div className="flex">
+        <div className=" w-1/4 text-start">
+          <img className="w-10 rounded-full" src={img} alt="" />{" "}
+          <p className="font-bold uppercase">{name}</p>
+        </div>
+        <div className="flex justify-center items-center">
+          <p className="text-sm">
+            Comments for{" "}
+            <span className="text-xl font-bold text-red-600">{foodname}</span>{" "}
+          </p>
+        </div>
       </div>
-
       <div>
-        <p className="text-sm">
-          Comments for{" "}
-          <span className="text-xl font-bold text-red-600">{foodname}</span>{" "}
-        </p>
-        <p className="h-20 mt-5 flex-1 border overflow-hidden hover:overflow-scroll">
+        <div className="h-32 mt-5 bg-slate-300 flex   items-center">
           {" "}
-          {comment}
-        </p>
-        <p className="text-sm">Rating : {rating}</p>
+          <p className=" p-1 h-full w-full font-serif font-bold text-start overflow-hidden hover:overflow-scroll ">
+            {comment}
+          </p>
+        </div>
       </div>
-      <p>
-        <small className="text-xs">{date}</small>
-      </p>
+      <div className="text-start">
+        <p className="text-sm">Rating : {rating}</p>
+        <p>
+          <small className="text-xs">{date}</small>
+        </p>
+      </div>
     </div>
   );
 };

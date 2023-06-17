@@ -17,7 +17,7 @@ const Headers = () => {
       });
   };
   const menu = (
-    <div className="flex flex-col items-center lg:flex-row lg:justify-between lg:flex-1 ">
+    <div className="flex flex-col items-center lg:flex-row lg:justify-between lg:flex-1  ">
       <li onClick={() => setshow(false)}>
         <Link className="text-sm font-bold text-blue-700" to={"/"}>
           Home
@@ -36,39 +36,31 @@ const Headers = () => {
         </Link>
       </li>
 
+      <li onClick={() => setshow(false)}>
+        <Link to={"/myreview"} className="text-sm font-bold text-blue-700">
+          My Reviews
+        </Link>
+      </li>
+
+      <li onClick={() => setshow(false)}>
+        <Link to={"/addnewmeal"} className="text-sm font-bold text-blue-700">
+          Add New Dish
+        </Link>
+      </li>
+
       {user && (
-        <>
-          <li onClick={() => setshow(false)}>
-            <Link to={"/myreview"} className="text-sm font-bold text-blue-700">
-              My Reviews
-            </Link>
-          </li>
+        <li onClick={() => setshow(false)}>
+          <div className="  flex flex-col">
+            <p className="font-bold text-red-900">{user?.displayName}</p>
 
-          <li onClick={() => setshow(false)}>
-            <Link
-              to={"/addnewmeal"}
-              className="text-sm font-bold text-blue-700"
-            >
-              Add New Dish
-            </Link>
-          </li>
-
-          <li onClick={() => setshow(false)}>
-            <div className="  flex flex-col">
-              <p className="font-bold text-red-900">{user?.displayName}</p>
-
-              <img
-                className="h-8 w-8 rounded-full"
-                src={user.photoURL}
-                alt=""
-              />
-              <button onClick={handleLogOut} className="font-bold text-red-900">
-                SignOut
-              </button>
-            </div>
-          </li>
-        </>
+            <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" />
+            <button onClick={handleLogOut} className="font-bold text-red-900">
+              SignOut
+            </button>
+          </div>
+        </li>
       )}
+
       {!user && (
         <>
           <li onClick={() => setshow(false)}>
@@ -87,7 +79,7 @@ const Headers = () => {
   );
 
   return (
-    <div className="navbar bg-base-300 p-4 mb-6 lg:p-0 ">
+    <div className="navbar  p-4 my-6  rounded-lg ">
       <div className="navbar-start">
         <div className="dropdown">
           <label

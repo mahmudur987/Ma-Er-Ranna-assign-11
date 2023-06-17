@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../../Context/UserContext";
 import AddReview from "./AddReview";
 import Review from "./Review";
@@ -54,20 +54,35 @@ const ReviewSection = ({ dish }) => {
         SetReviews(data);
       });
   }, [dish]);
-
+  console.log(reviews.length);
   return (
     <div>
       <div className="my-10">
         {reviews?.map((review, idx) => (
           <Review key={idx} review={review}></Review>
         ))}
+
+        {reviews.length === 0 && (
+          <p className="font-bold text-xl  text-red-600"> No Review to show</p>
+        )}
       </div>
-      <div className="border">
-        <p className="text-center text-blue-600 text-2xl font-bold my-5">
-          Add New Review
+      {user && (
+        <div className="border">
+          <p className="text-center text-blue-600 text-2xl font-bold my-5">
+            Add New Review
+          </p>
+          <AddReview handleAddreview={handleAddreview} dish={dish}></AddReview>
+        </div>
+      )}
+      {!user && (
+        <p className="font-bold text-2xl m-3 ">
+          Please{" "}
+          <Link to={"/login"} className="text-blue-500">
+            LogIn{" "}
+          </Link>{" "}
+          first for add review{" "}
         </p>
-        <AddReview handleAddreview={handleAddreview} dish={dish}></AddReview>
-      </div>
+      )}
     </div>
   );
 };

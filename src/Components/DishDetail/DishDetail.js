@@ -16,7 +16,7 @@ const DishDetail = () => {
           <figure>
             <img className="w-9/12 rounded-md" src={picture} alt="Shoes" />
           </figure>
-          <div className="card-body">
+          <div className="card-body text-start">
             <h2 className="card-title md:text-3xl font-bold">{name} </h2>
             <p>{about}</p>
             <div className="">

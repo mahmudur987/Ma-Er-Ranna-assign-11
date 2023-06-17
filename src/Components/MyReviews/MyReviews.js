@@ -33,7 +33,7 @@ const MyReviews = () => {
       <Helmet>
         <title>My Reviews</title>
       </Helmet>
-      <div className="w-3/4 mx-auto">
+      <div className=" mx-auto flex flex-col gap-5">
         {myreviews?.map((myreview, idx) => (
           <MyReview
             key={idx}
@@ -47,7 +47,7 @@ const MyReviews = () => {
       >
         <h1 className="text-3xl text-center mt-28 font-bold ">
           {" "}
-          No post for review or your time is over.
+          No post for review or your browsing time is over.
           <br />
           please logout and log in again{" "}
         </h1>

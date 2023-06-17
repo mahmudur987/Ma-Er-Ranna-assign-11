@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { authContext } from "../../Context/UserContext";
 import { Helmet } from "react-helmet";
+import Loading from "../Loading/Loading";
 
 const Login = () => {
   const {
@@ -32,7 +33,6 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         const currentUser = { email: user.email };
-        console.log(currentUser);
         fetch(`https://ma-er-ranna-server.vercel.app/jwt`, {
           method: "POST",
           headers: {
@@ -52,8 +52,9 @@ const Login = () => {
         const errorMessage = error.message;
         SetError(errorMessage);
         console.error(error);
+        Setloading(false);
       });
-    // console.log(email, password)
+    Setloading(false);
   };
   const handlegoogleLogin = () => {
     Setloading(true);
@@ -133,22 +134,11 @@ const Login = () => {
   };
 
   if (loading) {
-    return (
-      <div class="flex justify-center items-center">
-        <div
-          class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full"
-          role="status"
-        >
-          <span class="visually-hidden">
-            <FaSpinner></FaSpinner>
-          </span>
-        </div>
-      </div>
-    );
+    return <Loading />;
   }
 
   return (
-    <div className="hero min-h-screen bg-pink-200">
+    <div className="hero  ">
       <Helmet>
         <title>Log In</title>
       </Helmet>

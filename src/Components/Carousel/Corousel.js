@@ -41,15 +41,14 @@ const Corousel = () => {
     autoplay: true,
     speed: 20000,
     autoplaySpeed: 2000,
-    cssEase: "linear",
   };
   return (
     <div>
       <Slider {...settings}>
-        {corouselItems.map((data, idx) => (
+        {corouselItems?.map((data, idx) => (
           <div key={idx} class="relative h-[600px] p-3  ">
             <img
-              src={data.img}
+              src={data?.img}
               alt="Banner Image"
               class="object-cover w-full h-full"
             />
@@ -84,10 +83,10 @@ const Corousel = () => {
             <div class="absolute inset-0 flex items-center justify-center">
               <div class="text-center">
                 <h1 class="text-4xl font-bold text-white lg:text-6xl">
-                  {data.Heading}
+                  {data?.Heading}
                 </h1>
                 <p class="mt-4 text-lg text-gray-300 lg:text-xl">
-                  {data.discription}
+                  {data?.discription}
                 </p>
               </div>
             </div>

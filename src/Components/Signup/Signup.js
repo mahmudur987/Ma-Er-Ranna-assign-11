@@ -87,7 +87,7 @@ const SignUp = () => {
   }
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-[500px]">
       <Helmet>
         <title>Sign Up</title>
       </Helmet>

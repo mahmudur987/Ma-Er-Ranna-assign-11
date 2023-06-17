@@ -56,17 +56,16 @@ const MyReview = ({ myreview, afterdeletereview }) => {
   // console.log(myreview);
 
   return (
-    <div className="card w-full bg-base-100 shadow-xl my-10">
-      <div className="card-body">
-        <h2 className="card-title">{name}</h2>
-        <p>
+    <div className="card max-w-3xl mx-auto bg-base-100 shadow-xl my-10">
+      <div className="card-body text-start">
+        <p className="font-bold text-xl">
           {" "}
           Reviewing Comments for {foodname}{" "}
           <span>
-            <small>{date}</small>
+            <small>{date.slice(0, 16)}</small>
           </span>{" "}
         </p>
-        <p className="font-bold p-4 border overflow-hidden hover:overflow-scroll ">
+        <p className="font-bold p-4 bg-slate-300 border overflow-hidden hover:overflow-scroll ">
           {" "}
           {newComment}{" "}
         </p>

@@ -43,9 +43,11 @@ const Home = () => {
           <HomeDishes dishes={dishes}></HomeDishes>
         </div>
 
-        <p className="text-center">
+        <p className="text-center m-4">
           <Link to={"/alldishes"}>
-            <button className="btn btn-info text-center">See All</button>
+            <button className="btn bg-black text-white text-center">
+              See All
+            </button>
           </Link>
         </p>
       </div>
